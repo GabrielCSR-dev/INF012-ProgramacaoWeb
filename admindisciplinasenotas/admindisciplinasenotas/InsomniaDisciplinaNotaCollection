@@ -1,0 +1,238 @@
+type: collection.insomnia.rest/5.0
+name: AdminDisciplinasENotas
+meta:
+  id: wrk_131e5b4a7dd342249136a394c03761d4
+  created: 1748010710931
+  modified: 1748011767300
+collection:
+  - url: localhost:8080/api/disciplinas
+    name: CreateDisciplina
+    meta:
+      id: req_73b0b4de3fa1420ba4dc911c4c334981
+      created: 1748011726309
+      modified: 1748375671682
+      isPrivate: false
+      sortKey: -1748011726309
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"nome": "ingles",
+        	"codigo": "ING017"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas
+    name: ListAllDisciplinas
+    meta:
+      id: req_67a8a54feece4cc2b4c2fac64c5bccf5
+      created: 1748361914675
+      modified: 1748375686408
+      isPrivate: false
+      sortKey: -1748361914675
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas/6
+    name: ListDisciplina
+    meta:
+      id: req_91c80e375d72416f9274703a7c5225d0
+      created: 1748362767592
+      modified: 1748375691354
+      isPrivate: false
+      sortKey: -1748362767592
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas/6
+    name: UpdateDisciplina
+    meta:
+      id: req_d63ba48e3d1949f494604713841a586e
+      created: 1748362851210
+      modified: 1748375710903
+      isPrivate: false
+      sortKey: -1748362851210
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"codigo": "ING013"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas/4
+    name: DeleteDisciplina
+    meta:
+      id: req_18d17cb8bb394e9fa8f676a16dc69c5d
+      created: 1748362950952
+      modified: 1748362972704
+      isPrivate: false
+      sortKey: -1748362950952
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas/6/notas
+    name: ListNotas
+    meta:
+      id: req_e29b8b9c75ab4755a864fb953801ccbd
+      created: 1748363017992
+      modified: 1748377854486
+      isPrivate: false
+      sortKey: -1748363017992
+    method: GET
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/disciplinas/5/notas
+    name: PostNotas
+    meta:
+      id: req_131ce3b37a7443ba8351c7e721e3880f
+      created: 1748363239354
+      modified: 1748377965246
+      isPrivate: false
+      sortKey: -1748363239354
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"aluno": "Gabriel",
+        	"nota": 7.3
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/notas/1
+    name: UpdateNota
+    meta:
+      id: req_cac775fb4dac433d826d51e3b78ad343
+      created: 1748377080889
+      modified: 1748377806791
+      isPrivate: false
+      sortKey: -1748377080889
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+        	"aluno": "Pedro",
+        	"nota": 3,
+        	"disciplina": {
+        		"ID": 1
+        	}
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: localhost:8080/api/notas/3
+    name: DeleteNota
+    meta:
+      id: req_d7fc358b49e1426fa692c7552439354b
+      created: 1748377882843
+      modified: 1748377919378
+      isPrivate: false
+      sortKey: -1748377882843
+    method: DELETE
+    headers:
+      - name: User-Agent
+        value: insomnia/11.1.0
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_14057d4d00ac261d0eb2da1fccfb5f04eb4ddade
+    created: 1748010711571
+    modified: 1748010711571
+environments:
+  name: Base Environment
+  meta:
+    id: env_14057d4d00ac261d0eb2da1fccfb5f04eb4ddade
+    created: 1748010711103
+    modified: 1748010711103
+    isPrivate: false
