@@ -6,22 +6,26 @@ import org.springframework.stereotype.Service;
 
 import br.edu.ifba.biblioteca.dtos.AutorDTO;
 import br.edu.ifba.biblioteca.dtos.AutorForm;
+import br.edu.ifba.biblioteca.dtos.LivroDTO;
 import br.edu.ifba.biblioteca.entidades.Autor;
 import br.edu.ifba.biblioteca.repositorios.AutorRepository;
+import br.edu.ifba.biblioteca.repositorios.LivroRepository;
 
 @Service
 public class AutorService {
 
 	private AutorRepository autorRepository;
+	private LivroRepository livroRepository;
 
-	public AutorService(AutorRepository autorRepository) {
+	public AutorService(AutorRepository autorRepository, LivroRepository livroRepository) {
 		super();
 		this.autorRepository = autorRepository;
+		this.livroRepository = livroRepository;
 	}
 	
 	public AutorForm cadastrar(AutorForm autorForm) {
 		Autor autor = this.autorRepository.save(new Autor(autorForm));
-		return new AutorForm(autor.getId(), autor.getNome(), autor.getEmail(), autor.getNacionalidade());
+		return new AutorForm(autor);
 	}
 	
 	public List<AutorDTO> listar() {
@@ -46,5 +50,10 @@ public class AutorService {
 		Autor autor = this.autorRepository.findById(Id).get();
 		this.autorRepository.deleteById(Id);
 		return new AutorDTO(autor);
+	}
+	
+	public List<LivroDTO> listarLivros(Long Id) {
+		Autor autor = this.autorRepository.findById(Id).get();
+		return this.livroRepository.getByAutor(autor).stream().map(LivroDTO::new).toList();
 	}
 }

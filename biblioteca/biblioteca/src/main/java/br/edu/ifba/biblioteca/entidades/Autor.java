@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -44,25 +45,23 @@ public class Autor {
 	public Long getId() {
 		return id;
 	}
-	public void setId(Long id) {
-		this.id = id;
-	}
+
 	public String getNome() {
 		return nome;
 	}
-	public void setNome(String nome) {
+	public void setNome(@NotNull @Size(min = 2, max = 100) @Valid String nome) {
 		this.nome = nome;
 	}
 	public String getEmail() {
 		return email;
 	}
-	public void setEmail(String email) {
+	public void setEmail(@NotNull @Email @Valid String email) {
 		this.email = email;
 	}
 	public String getNacionalidade() {
 		return nacionalidade;
 	}
-	public void setNacionalidade(String nacionalidade) {
+	public void setNacionalidade(@Size(max = 50) @Valid String nacionalidade) {
 		this.nacionalidade = nacionalidade;
 	}
 	
